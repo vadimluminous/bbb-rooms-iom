@@ -12,7 +12,7 @@ function create_posttype() {
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'room'),
+            'rewrite' => array('slug' => 'meeting'),
             'show_in_rest' => true,
  
         )
