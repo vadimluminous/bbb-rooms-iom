@@ -1,4 +1,4 @@
-<?
+<?php
 // Enqueue Plugin Stylesheet
 function enqueue_styles() {
     wp_enqueue_style( 'bbb-rooms-iom', plugin_dir_url(dirname(__FILE__)) . 'public/css/bbb-rooms-iom.css', array(), '1.0', 'all' );
