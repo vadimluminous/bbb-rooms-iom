@@ -200,7 +200,7 @@ function iomrooms_post_template($single) {
     // if ( $post->post_type == 'iomrooms' ) {
     //     return plugin_dir_path(dirname(__FILE__)) . 'layouts\layout-rooms.php';
     // }
-    return $single;
+    // return $single;
 }
 
 // Add Archive Template
