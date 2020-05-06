@@ -192,23 +192,23 @@ function iomrooms_roomlink( $atts = null, $content = null, $tag = null ) {
 add_shortcode( 'roomlink', 'iomrooms_roomlink' );
 
 /* Filter the single_template with our custom function*/
-add_filter('single_template', 'iomrooms_post_template');
+// add_filter('single_template', 'iomrooms_post_template');
 
-function iomrooms_post_template($single) {
-    global $post;
-    /* Checks for single template by post type */
-    if ( $post->post_type == 'iomrooms' ) {
-        return plugin_dir_path(dirname(__FILE__)) . 'layouts\layout-rooms.php';
-    }
-    return $single;
-}
+// function iomrooms_post_template($single) {
+//     global $post;
+//     /* Checks for single template by post type */
+//     if ( $post->post_type == 'iomrooms' ) {
+//         return plugin_dir_path(dirname(__FILE__)) . 'layouts\layout-rooms.php';
+//     }
+//     return $single;
+// }
 
-// Add Archive Template
-add_filter('template_include', 'lessons_template');
+// // Add Archive Template
+// add_filter('template_include', 'lessons_template');
 
-function lessons_template( $template ) {
-  if ( is_post_type_archive('iomrooms') ) {
-      return plugin_dir_path(dirname(__FILE__)) . 'layouts\layout-rooms.php';
-  }
-  return $template;
-}
+// function lessons_template( $template ) {
+//   if ( is_post_type_archive('iomrooms') ) {
+//       return plugin_dir_path(dirname(__FILE__)) . 'layouts\layout-rooms.php';
+//   }
+//   return $template;
+// }
