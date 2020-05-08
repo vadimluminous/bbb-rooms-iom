@@ -7,7 +7,7 @@ function bbb_rooms_iom_enqueue_styles() {
     $style = 'bootstrap';
     if( ( ! wp_style_is( $style, 'queue' ) ) && ( ! wp_style_is( $style, 'done' ) ) ) {
         //queue up your bootstrap
-        wp_enqueue_style( 'bootstrap', plugin_dir_url(dirname(__FILE__)) . 'public/css/bootstrap/bootstrap.min.css', array(), '4.2' );
+        wp_enqueue_style( 'bootstrap-grid', plugin_dir_url(dirname(__FILE__)) . 'public/css/bootstrap/bootstrap-grid.min.css', array(), '4.3' );
     }
 }
 add_action( 'wp_enqueue_scripts', 'bbb_rooms_iom_enqueue_styles' );
