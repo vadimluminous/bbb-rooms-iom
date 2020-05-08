@@ -1,7 +1,7 @@
 <?php
 // Enqueue Plugin Stylesheet
 function bbb_rooms_iom_enqueue_styles() {
-    wp_enqueue_style( 'bbb-rooms-iom', plugin_dir_url(dirname(__FILE__)) . 'public/css/bbb-rooms-iom.css', array(), '1.1', 'all' );
+    wp_enqueue_style( 'bbb-rooms-iom', plugin_dir_url(dirname(__FILE__)) . 'public/css/bbb-rooms-iom.css', array(), '1.2', 'all' );
 
     // Bootstrap Check and Enqueue
     $style = 'bootstrap';
