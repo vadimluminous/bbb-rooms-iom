@@ -4,11 +4,11 @@ function bbb_rooms_iom_enqueue_styles() {
     wp_enqueue_style( 'bbb-rooms-iom', plugin_dir_url(dirname(__FILE__)) . 'public/css/bbb-rooms-iom.css', array(), '1.3', 'all' );
 
     // Bootstrap Check and Enqueue
-    // $style = 'bootstrap';
-    // if( ( ! wp_style_is( $style, 'queue' ) ) && ( ! wp_style_is( $style, 'done' ) ) ) {
-    //     //queue up your bootstrap
-    //     wp_enqueue_style( 'bootstrap', plugin_dir_url(dirname(__FILE__)) . 'public/css/bootstrap/bootstrap.min.css', array(), '4.2' );
-    // }
+    $style = 'bootstrap';
+    if( ( ! wp_style_is( $style, 'queue' ) ) && ( ! wp_style_is( $style, 'done' ) ) ) {
+        //queue up your bootstrap
+        wp_enqueue_style( 'bootstrap', plugin_dir_url(dirname(__FILE__)) . 'public/css/bootstrap/bootstrap.min.css', array(), '4.2' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'bbb_rooms_iom_enqueue_styles' );
 
