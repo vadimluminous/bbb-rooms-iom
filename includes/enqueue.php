@@ -10,7 +10,7 @@ function bbb_rooms_iom_enqueue_styles() {
         wp_enqueue_style( 'bootstrap', plugin_dir_url(dirname(__FILE__)) . 'public/css/bootstrap/bootstrap.min.css', array(), '4.2' );
     }
 }
-add_action( 'wp_enqueue_scripts', 'bbb_rooms_iom_enqueue_styles', 12 );
+add_action( 'wp_enqueue_scripts', 'bbb_rooms_iom_enqueue_styles' );
 
 // Enqueue Google Font
 function wpb_add_google_fonts() {
