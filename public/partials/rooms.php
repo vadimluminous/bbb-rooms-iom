@@ -1,4 +1,4 @@
-<div class='col-lg-4 card'>
+<div class='col-lg-4 one-card'>
 	<a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">
 		<div id="room-block" data-path="/b/adm-fqa-pcf/update_settings" data-room-access-code="" class="card">
 			<div class="cardbody p-1">
@@ -20,7 +20,7 @@
 						<td class="text-right">          
 							<div class="item-action dropdown" data-display="static">
 								<a href="javascript:void(0)" data-toggle="dropdown" data-display="static" class="icon" aria-expanded="false">
-									<i class="fas fa-ellipsis-v px-4"></i>
+									<i class="fas fa-ellipsis-v"></i>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right dropdown-menu-md-left">
 									<form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
