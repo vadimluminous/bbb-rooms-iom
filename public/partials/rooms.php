@@ -1,7 +1,7 @@
 <div class='col-lg-4 one-card'>
 	<a href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>">
 		<div id="room-block" data-path="/b/adm-fqa-pcf/update_settings" data-room-access-code="" class="card">
-			<div class="cardbody p-1">
+			<div class="cardbody">
 				<table class="table table-hover table-vcenter text-wrap table-no-border">
 					<tbody class="no-border-top">
 						<tr><td>
