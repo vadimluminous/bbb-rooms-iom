@@ -1,7 +1,7 @@
 <?php
 
 // custom jquery
-wp_register_script( 'custom_js',plugin_dir_path( __FILE__ ) . '/js/jquery.custom.js', array( 'jquery' ), '1.0', TRUE );
+wp_register_script( 'custom_js', plugin_dir_url(dirname(__FILE__)) . 'public/js/jquery.custom.js', array( 'jquery' ), '1.0', TRUE );
 wp_enqueue_script( 'custom_js' );
  
 // validation
