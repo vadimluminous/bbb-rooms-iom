@@ -9,6 +9,9 @@
 *
 */
 /* Top Area */
+.iomrooms-template-default .page-header {
+    display:none;
+}
 #bbb-room-single {
 	background-color:#F5F7FB;
 	padding:80px 0px;
@@ -157,6 +160,9 @@ section#recordings {
 */
 .one-card {
     margin-bottom:20px;
+}
+.one-card a {
+    text-decoration:none !important;
 }
 .cardbody {
     width:100%;
