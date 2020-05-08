@@ -5,7 +5,7 @@
 				<table class="table table-hover table-vcenter text-wrap table-no-border">
 					<tbody class="no-border-top">
 						<tr><td>
-							<span class="stamp stamp-md bg-primary">
+							<span class="stamp stamp-md">
 								<i class="fas fa-home"></i>
 							</span>
 						</td>

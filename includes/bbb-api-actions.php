@@ -177,6 +177,18 @@ function joinroom( $atts = null, $content = null, $tag = null ) {
 
 add_shortcode( 'joinroom', 'joinroom' );
 
+// All Rooms Template Shortcode
+function allrooms( $atts = null, $content = null, $tag = null ) {
+
+    $hashids = new Hashids\Hashids( HASHID );
+    $id = get_the_ID();
+    $recordings =  Bigbluebutton_Api::get_recordings($id);
+    include plugin_dir_path(dirname(__FILE__)) . 'layouts/layout-rooms.php' ;
+
+}
+
+add_shortcode( 'allrooms', 'allrooms' );
+
 // Display Room Link
 function iomrooms_roomlink( $atts = null, $content = null, $tag = null ) {
 
@@ -204,11 +216,11 @@ function iomrooms_post_template($single) {
 }
 
 // Add Archive Template
-add_filter('template_include', 'lessons_template');
+// add_filter('template_include', 'lessons_template');
 
-function lessons_template( $template ) {
-  if ( is_post_type_archive('iomrooms') ) {
-      return plugin_dir_path(dirname(__FILE__)) . 'layouts/layout-rooms.php';
-  }
-  return $template;
-}
+// function lessons_template( $template ) {
+//   if ( is_post_type_archive('iomrooms') ) {
+//       return plugin_dir_path(dirname(__FILE__)) . 'layouts/layout-rooms.php';
+//   }
+//   return $template;
+// }

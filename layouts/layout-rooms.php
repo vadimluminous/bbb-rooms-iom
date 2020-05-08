@@ -7,6 +7,7 @@
  *
  * @package grassywp
  */
+    $user = wp_get_current_user();
 get_header(); ?>
 </div>
 </div>
@@ -14,8 +15,10 @@ get_header(); ?>
 
 <div class="main-content"> 
   <!-- Breadcrumbs Start -->
+<?php
+if ( in_array( 'silver', (array) $user->roles ) || in_array( 'gold', (array) $user->roles ) || in_array( 'platinum', (array) $user->roles ) || in_array( 'administrator', (array) $user->roles ) ) { 
+?>
 <section id='bbb-room-single'>
-
 	<div class='container'>
 		<div class='row row-eq-height' id='startarea'>
 			<div class='col-lg-8'>
@@ -99,6 +102,29 @@ get_header(); ?>
 	</div>
 </div>
 <div class="modal-backdrop hideform"></div>
+
+<?php } else { ?>
+<section id='bbb-room-single not-logged'>
+	<div class='container mb-2'>
+		<div class='row'>
+			<div class='col-lg-4'>
+				<h1>Rooms</h1>
+				<p>To create a virtual classroom, please login or register.</p>
+				<div class='row'>
+					<div class='col-lg-6'>
+						<h4><a href='#'>Login</a></h4>
+					</div>
+					<div class='col-lg-6'>
+						<h4><a href='#'>Register</a></h4>
+					</div>
+				</div>
+			</div>
+			<div class='col-lg-8'><img src='https://getvirtualclass.com/wp-content/uploads/2020/05/working-man-is-typing1.jpg'></div>
+
+		</div>
+	</div>
+</div>
+<?php } ?>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
 function myFunction() {

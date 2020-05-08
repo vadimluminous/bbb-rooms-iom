@@ -9,8 +9,12 @@
 *
 */
 /* Top Area */
-.iomrooms-template-default .page-header {
+.iomrooms-template-default .page-header,
+.post-type-archive-iomrooms .page-header {
     display:none;
+}
+#not-logged a {
+    color:#467fcf;
 }
 #bbb-room-single {
 	background-color:#F5F7FB;
@@ -59,7 +63,7 @@
     font-size: 30px;
     border-radius:3px;
     height:70px;
-    line-height:70px;
+    line-height:40px;
     border:0;
 }
 

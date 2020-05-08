@@ -18,7 +18,7 @@
 		<input type="hidden" name="submitted" id="submitted" value="true" />
 		<input type="hidden" name="token" value="<?php echo $token; ?>">
 		<input type="hidden" name="action" value="join_meeting">
-        <button type="submit"><?php _e('Create Room', 'framework') ?></button>
+        <button type="submit"><?php _e('Join Room', 'framework') ?></button>
         <?php wp_nonce_field( 'post_nonce', 'post_nonce_field' ); ?>
   		</div>
   	</div>
