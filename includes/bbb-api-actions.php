@@ -143,7 +143,7 @@ function iomrooms_recent_posts( $atts = null, $content = null, $tag = null ) {
                  $id = $hashids->encode(get_the_id());
                  $attendeePW = get_post_meta(get_the_id(), 'attendeePW', true);
                  $moderator = get_post_meta($id, 'moderatorPW', true);
-                 include plugin_dir_path(dirname(__FILE__)) . 'public\partials\rooms.php' ;
+                 include plugin_dir_path(dirname(__FILE__)) . 'public/partials/rooms.php' ;
                  wp_reset_postdata();
             }
         } else {
@@ -159,7 +159,7 @@ function iomrooms_recent_recordings( $atts = null, $content = null, $tag = null 
     $hashids = new Hashids\Hashids( HASHID );
     $id = get_the_ID();
     $recordings =  Bigbluebutton_Api::get_recordings($id);
-    include plugin_dir_path(dirname(__FILE__)) . 'public\partials\recordings.php' ;
+    include plugin_dir_path(dirname(__FILE__)) . 'public/partials/recordings.php' ;
 
 }
 
@@ -171,7 +171,7 @@ function joinroom( $atts = null, $content = null, $tag = null ) {
     $hashids = new Hashids\Hashids( HASHID );
     $id = get_the_ID();
     $recordings =  Bigbluebutton_Api::get_recordings($id);
-    include plugin_dir_path(dirname(__FILE__)) . 'layouts\layout-joinroom.php' ;
+    include plugin_dir_path(dirname(__FILE__)) . 'layouts/layout-joinroom.php' ;
 
 }
 
@@ -192,23 +192,23 @@ function iomrooms_roomlink( $atts = null, $content = null, $tag = null ) {
 add_shortcode( 'roomlink', 'iomrooms_roomlink' );
 
 /* Filter the single_template with our custom function*/
-// add_filter('single_template', 'iomrooms_post_template');
+add_filter('single_template', 'iomrooms_post_template');
 
-// function iomrooms_post_template($single) {
-//     global $post;
-//      Checks for single template by post type 
-//     if ( $post->post_type == 'iomrooms' ) {
-//         return plugin_dir_path(dirname(__FILE__)) . 'layouts\layout-rooms.php';
-//     }
-//     return $single;
-// }
+function iomrooms_post_template($single) {
+    global $post;
+    /* Checks for single template by post type */
+    if ( $post->post_type == 'iomrooms' ) {
+        return plugin_dir_path(dirname(__FILE__)) . 'layouts/layout-rooms.php';
+    }
+    return $single;
+}
 
 // Add Archive Template
 add_filter('template_include', 'lessons_template');
 
 function lessons_template( $template ) {
   if ( is_post_type_archive('iomrooms') ) {
-      return plugin_dir_path(dirname(__FILE__)) . 'layouts\layout-rooms.php';
+      return plugin_dir_path(dirname(__FILE__)) . 'layouts/layout-rooms.php';
   }
   return $template;
 }
