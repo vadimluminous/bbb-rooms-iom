@@ -9,10 +9,7 @@
 *
 */
 /* Top Area */
-.iomrooms-template-default .page-header,
-.post-type-archive-iomrooms .page-header {
-    display:none;
-}
+
 #not-logged a {
     color:#467fcf;
 }

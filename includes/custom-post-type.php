@@ -11,7 +11,7 @@ function create_posttype() {
                 'singular_name' => __( 'Room' )
             ),
             'public' => true,
-            'has_archive' => true,
+            'has_archive' => false,
             'rewrite' => array('slug' => 'room'),
             'show_in_rest' => true,
  

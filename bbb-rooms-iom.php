@@ -15,10 +15,15 @@ define( 'RETURN_URL', 'getvirtualclass.com' );
 require plugin_dir_path(__FILE__) . 'hashedids/HashGenerator.php' ;
 require plugin_dir_path(__FILE__) . 'hashedids/Hashids.php' ;
 
+require plugin_dir_path(__FILE__) . 'includes/install.php' ;
+require plugin_dir_path(__FILE__) . 'includes/config.php' ;
+
 require plugin_dir_path( __FILE__ ) . 'includes/custom-post-type.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-bbb-api.php';
 require plugin_dir_path( __FILE__ ) . 'includes/bbb-api-actions.php';
 require plugin_dir_path( __FILE__ ) . 'includes/enqueue.php';
+
+
 
 
 ?>

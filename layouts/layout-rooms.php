@@ -7,6 +7,8 @@
  *
  * @package grassywp
  */
+
+
     $user = wp_get_current_user();
 get_header(); ?>
 </div>
@@ -44,8 +46,9 @@ if ( in_array( 'silver', (array) $user->roles ) || in_array( 'gold', (array) $us
 				</div>
 			</div>
 			<div class='col-lg-4 force-bottom'>
+				<?php if( is_single()) { ?>
 				<form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
-			  		<input type="text" name="fullName" placeholder='Your Name'>
+			  		<input type="text" name="fullName" placeholder='Your Name' required>
 					<input type="hidden" name="submitted" id="submitted" value="true" />
 					<input type="hidden" name="token" value="<?php echo the_id(); ?>">
 					<input type="hidden" name="clientpage" value="true">
@@ -53,6 +56,7 @@ if ( in_array( 'silver', (array) $user->roles ) || in_array( 'gold', (array) $us
 			        <button type="submit" class='start-button'><?php _e('Start', 'framework') ?></button>
 			        <?php wp_nonce_field( 'post_nonce', 'post_nonce_field' ); ?>
 				</form>
+				<?php } ?>
 			</div>
 		</div>
 		<div class='row mt40'>
@@ -91,7 +95,7 @@ if ( in_array( 'silver', (array) $user->roles ) || in_array( 'gold', (array) $us
 		    		<span class="input-icon-addon">
                 		<i class="fas fa-chalkboard-teacher"></i>
               		</span>
-		        	<input id='create-room-name meetingName' class='form-control text-center' type="text" name="meetingName" value="<?php if ( isset( $_POST['meetingName'] ) ) echo $_POST['meetingName']; ?>" placeholder="Enter a room name..">
+		        	<input id='create-room-name meetingName' class='form-control text-center' type="text" name="meetingName" value="<?php if ( isset( $_POST['meetingName'] ) ) echo $_POST['meetingName']; ?>" placeholder="Enter a room name.." required>
 		        </div>
 		        <input type="hidden" name="submitted" id="submitted" value="true" />
                 <input type="hidden" name="action" value="create_meeting">

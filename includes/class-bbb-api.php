@@ -55,6 +55,7 @@ class Bigbluebutton_Api {
 			'moderatorPW' => rawurlencode( $moderator_code ),
 			'name'        => esc_attr( $name ),
 			'record'      => $recordable,
+			'welcome' 	  => WELCOME_MESSAGE,
 		);
 
 		$url = self::build_url( 'create', $arr_params );

@@ -147,7 +147,7 @@ function iomrooms_recent_posts( $atts = null, $content = null, $tag = null ) {
                  wp_reset_postdata();
             }
         } else {
-            _e( 'Sorry, no posts matched your criteria.' );
+            
         }
     }
 }
@@ -214,13 +214,3 @@ function iomrooms_post_template($single) {
     }
     return $single;
 }
-
-// Add Archive Template
-// add_filter('template_include', 'lessons_template');
-
-// function lessons_template( $template ) {
-//   if ( is_post_type_archive('iomrooms') ) {
-//       return plugin_dir_path(dirname(__FILE__)) . 'layouts/layout-rooms.php';
-//   }
-//   return $template;
-// }
