@@ -2,8 +2,8 @@
 // Enqueue Plugin Stylesheet
 function bbb_rooms_iom_enqueue_styles() {
     wp_enqueue_style( 'bbb-rooms-iom', plugin_dir_url(dirname(__FILE__)) . 'public/css/bbb-rooms-iom.css', array(), '1.3', 'all' );
-    
-    if ( is_page( 'Rooms' ) ) {
+
+    if ( is_page( 'Rooms' ) || get_post_type() == 'iomrooms' ) {
       // Bootstrap Check and Enqueue
       $style = 'bootstrap';
       if( ( ! wp_style_is( $style, 'queue' ) ) && ( ! wp_style_is( $style, 'done' ) ) ) {
